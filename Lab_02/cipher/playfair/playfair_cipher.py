@@ -2,7 +2,7 @@ class PlayFairCipher:
     def __init__(self) -> None:
         pass
 
-    def _init_(self):
+    def __init__(self):
         pass
 
     def create_playfair_matrix(self, key):
@@ -27,10 +27,12 @@ class PlayFairCipher:
             for col in range(len(matrix[row])):
                 if matrix[row][col] == letter:
                     return row, col
+                
     def playfair_encrypt(self, plain_text, matrix):
         plain_text = plain_text.replace("J", "I")
         plain_text = plain_text.upper()
         encrypted_text = ""
+        
         for i in range(0, len(plain_text), 2):
             pair = plain_text[i:i+2]
             if len(pair) == 1: 
